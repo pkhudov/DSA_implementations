@@ -13,6 +13,9 @@ class LinkedList:
         else:
             self.head = Node()
             self.length = 0
+        
+    def __str__(self):
+        return self.traverse()
     
     def get(self, index):
         if index > self.length-1 or index < 0:
@@ -39,7 +42,7 @@ class LinkedList:
             self.head = new_node
         else:
             node = self.head
-            for _ in range(index-1):
+            for _ in range(index-1): # Stop at previous
                 node = node.next
             # temp = node.next
             # node.next = Node(element)
@@ -56,13 +59,13 @@ class LinkedList:
             self.head = self.head.next
         else:
             node = self.head
-            for _ in range(index-1):
+            for _ in range(index-1): # Stop at previous 
                 node = node.next
             node.next = node.next.next
         self.length -= 1
 
     def append(self, element):
-        if self.head.data is None and self.head.next is None:
+        if self.head.data is None and self.head.next is None: # Still allows first element to be None
             self.head.data = element
         else:
             tail = self.head
@@ -78,7 +81,7 @@ class LinkedList:
             node = node.next
             elements.append(str(node.data))
         elements.append('None')
-        print("->".join(elements))
+        return("->".join(elements))
 
 
 # list = LinkedList([1,2,3])
@@ -92,12 +95,11 @@ class LinkedList:
 # print(list.head.next.data)
 # print(list.head.next.next.data)
 # print(list.head.next.next.next.data)
-# list.traverse()
+# print(list)
 # print(list.length)
 
 # list2 = LinkedList()
-# list2.traverse()
-
+# print(list2)
 # list3 = LinkedList([1,2,3])
 # list3.delete(0)
-# list3.traverse()
+# print(list3)

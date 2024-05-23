@@ -74,11 +74,11 @@ class TestLinkedList(unittest.TestCase):
         ll_multiple = LinkedList([1, 2, 3])
 
         print("Traverse empty list:")
-        ll_empty.traverse()  # Expected: None->None
+        print(ll_empty) # Expected: None->None
         print("Traverse single element list:")
-        ll_single.traverse()  # Expected: 5->None
+        print(ll_single)  # Expected: 5->None
         print("Traverse multiple elements list:")
-        ll_multiple.traverse()  # Expected: 1->2->3->None
+        print(ll_multiple) # Expected: 1->2->3->None
 
 if __name__ == '__main__':
     unittest.main()
