@@ -11,13 +11,13 @@ class DynamicArray():
                 self.size = 0
                 self.capacity = arg
 
-        # If user provides elements
+        # If user provides items
         elif isinstance(arg, list):
             self.array = arg
             self.size = len(arg)
             self.capacity = len(arg)
         else:
-            raise(TypeError("Please provide list of elements or array capacity"))
+            raise(TypeError("Please provide list of items or array capacity"))
         
     def __str__(self):
         return str(self.array[:self.size])
@@ -28,17 +28,17 @@ class DynamicArray():
     def length(self):
         return self.size
 
-    def set(self, element, index):
+    def set(self, item, index):
         if index > self.size-1 or index < 0:
             raise IndexError("Index out of bounds")
-        self.array[index] = element
+        self.array[index] = item
     
     def get(self, index):
         if index > self.size-1 or index < 0:
             raise IndexError("Index out of bounds")
         return self.array[index]
         
-    def insert(self, element, index):
+    def insert(self, item, index):
         if index > self.size or index < 0:
             raise IndexError("Index out of bounds")
         
@@ -49,7 +49,7 @@ class DynamicArray():
         for i in range(self.size, index, -1):
             self.array[i] = self.array[i-1]
     
-        self.array[index] = element
+        self.array[index] = item
         self.size += 1
     
     def delete(self, index):
@@ -62,8 +62,8 @@ class DynamicArray():
         self.array[self.size-1] = None
         self.size -= 1
     
-    def append(self, element):
-        self.insert(element, self.size)
+    def append(self, item):
+        self.insert(item, self.size)
 
     def _resize(self, new_capacity):
         new_array = [None] * new_capacity

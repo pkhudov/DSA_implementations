@@ -8,11 +8,11 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(ll_empty.length, 0)
         self.assertIsNone(ll_empty.head)  # Adjusted this line
 
-        ll_elements = LinkedList([1, 2, 3])
-        self.assertEqual(ll_elements.length, 3)
-        self.assertEqual(ll_elements.head.data, 1)
-        self.assertEqual(ll_elements.head.next.data, 2)
-        self.assertEqual(ll_elements.head.next.next.data, 3)
+        ll_items = LinkedList([1, 2, 3])
+        self.assertEqual(ll_items.length, 3)
+        self.assertEqual(ll_items.head.data, 1)
+        self.assertEqual(ll_items.head.next.data, 2)
+        self.assertEqual(ll_items.head.next.next.data, 3)
 
     def test_get(self):
         ll = LinkedList([1, 2, 3])

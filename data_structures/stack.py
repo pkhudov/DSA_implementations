@@ -4,15 +4,15 @@ class Stack(LinkedList):
     def __init__(self):
         super().__init__()
     
-    def push(self, element):
-        self.insert(element, 0)
+    def push(self, item):
+        self.insert(item, 0)
     
     def pop(self):
         if self.is_empty():
             raise IndexError('Stack is empty')
-        element = self.get(0)
+        item = self.get(0)
         self.delete(0)
-        return element
+        return item
     
     def peek(self):
         if self.is_empty():

@@ -53,5 +53,23 @@ Same as in linked list, however in practice it is double as fast because we can 
 - O(n) because for each element we store data and 2 pointers. O(3n) = O(n)
 
 ## Stack
-
+### Time
 All operations are O(1) because we only access the top element.
+### Space
+O(n)
+
+## Queue
+
+### Time
+All operations are O(1) because we maintain pointers to the head and tail.
+### Space
+O(n)
+
+## Binary Tree
+
+### Time
+All except traversal are O(h) where h is the height of the tree. In the worst case h = n, so O(n). If the tree is balanced, h = log(n), so O(log(n)). A random tree on expectation will be balanced. Traversal is O(n) because we have to visit all nodes.
+### Space
+O(n)
+
+
